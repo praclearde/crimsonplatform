@@ -24,6 +24,4 @@
 
    namespace Crimson\System\Core;
 
-   // directory: core
-   include_once 'environment.php';
-   include_once 'settings.php';
+   // settings here
