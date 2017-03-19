@@ -22,14 +22,14 @@
 
    */
 
-   namespace Crimson\System\Core;
+   namespace Crimson\System\Interfaces;
 
-   // directory: core
-   include_once 'environment.php';
-   include_once 'settings.php';
+   interface Generic {
 
-   // directory: interfaces
-   include_once ENVIRONMENT_DIRECTORY_SYSTEM_INTERFACES.'generic.php';
+      public function compareStrings($string1, $string2);
+      public function decodeBase64String($string);
+      public function encodeStringToBase64($string);
+      public function returnUriPath();
+      public function returnUriQueryArray();
 
-   // directory: libraries
-   include_once ENVIRONMENT_DIRECTORY_SYSTEM_LIBRARIES.'generic.php';
+   }
