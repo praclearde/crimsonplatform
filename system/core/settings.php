@@ -24,4 +24,5 @@
 
    namespace Crimson\System\Core;
 
-   // settings here
+   // settings: system
+   define('SETTING_SYSTEM_ENCODING',            'UTF-8');

@@ -28,6 +28,10 @@
 
    require_once 'core/bootstrap.php';
 
+   // variable-width encoding
+   mb_internal_encoding(SETTING_SYSTEM_ENCODING);
+   mb_http_output(SETTING_SYSTEM_ENCODING);
+
    try {
 
       // code here
