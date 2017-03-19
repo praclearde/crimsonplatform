@@ -24,5 +24,22 @@
 
    namespace Crimson\System\Core;
 
-   // directory: core
-   include_once 'environment.php';
+   // baseline
+   define('ENVIRONMENT_BASELINE',                              realpath(dirname(basename($_SERVER['REQUEST_URI']))));
+
+   // directory: modules
+   define('ENVIRONMENT_DIRECTORY_MODULES',                     ENVIRONMENT_BASELINE.'/modules/');
+
+   // directory: log
+   define('ENVIRONMENT_DIRECTORY_LOGS',                        '/var/log/crimson/');
+
+   // directory: system
+   define('ENVIRONMENT_DIRECTORY_SYSTEM',                      ENVIRONMENT_BASELINE.'/system/');
+   define('ENVIRONMENT_DIRECTORY_SYSTEM_CORE',                 ENVIRONMENT_DIRECTORY_SYSTEM.'core/');
+   define('ENVIRONMENT_DIRECTORY_SYSTEM_DRIVERS',              ENVIRONMENT_DIRECTORY_SYSTEM.'drivers/');
+   define('ENVIRONMENT_DIRECTORY_SYSTEM_INTERFACES',           ENVIRONMENT_DIRECTORY_SYSTEM.'interfaces/');
+   define('ENVIRONMENT_DIRECTORY_SYSTEM_LIBRARIES',            ENVIRONMENT_DIRECTORY_SYSTEM.'libraries/');
+   define('ENVIRONMENT_DIRECTORY_SYSTEM_MESSAGES',             ENVIRONMENT_DIRECTORY_SYSTEM.'messages/');
+
+   // directory: uploads
+   define('ENVIRONMENT_DIRECTORY_UPLOADS',                     ENVIRONMENT_BASELINE.'/uploads/');
