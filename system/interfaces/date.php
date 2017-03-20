@@ -22,11 +22,12 @@
 
    */
 
-   namespace Crimson\System\Core;
+   namespace Crimson\System\Interfaces;
 
-   // settings: date & time
-   define('SETTING_DATEANDTIME_FORMAT',            DATE_RFC850);
-   define('SETTING_DATEANDTIME_TIMEZONE',          'UTC');
+   interface Date {
 
-   // settings: system
-   define('SETTING_SYSTEM_ENCODING',               'UTF-8');
+      public function returnCurrentDateAndTime($timezone);
+      public function returnFormattedDateAndTime($time, $timezone, $format);
+      public function returnTimestamp($time, $timezone);
+
+   }

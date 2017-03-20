@@ -22,11 +22,36 @@
 
    */
 
-   namespace Crimson\System\Core;
+   namespace Crimson\System\Libraries;
 
-   // settings: date & time
-   define('SETTING_DATEANDTIME_FORMAT',            DATE_RFC850);
-   define('SETTING_DATEANDTIME_TIMEZONE',          'UTC');
+   use \DateTime;
+   use \DateTimeZone;
+   use Crimson\System\Interfaces;
 
-   // settings: system
-   define('SETTING_SYSTEM_ENCODING',               'UTF-8');
+   class Date implements Interfaces\Date {
+
+      private function returnDateTimeObject($time, $timezone) {
+
+         return new DateTime((!empty($time) ? $time : NULL), new DateTimeZone((!empty($timezone) ? $timezone : constant('SETTING_DATEANDTIME_TIMEZONE'))));
+
+      }
+
+      public function returnCurrentDateAndTime($timezone) {
+
+         return $this->returnDateTimeObject(NULL, $timezone);
+
+      }
+
+      public function returnFormattedDateAndTime($time, $timezone, $format) {
+
+         return $this->returnDateTimeObject($time, $timezone)->format((!empty($format) ? $format : constant('SETTING_DATEANDTIME_FORMAT')));
+
+      }
+
+      public function returnTimestamp($time, $timezone) {
+
+         return $this->returnDateTimeObject($time, $timezone)->getTimestamp();
+
+      }
+
+   }
